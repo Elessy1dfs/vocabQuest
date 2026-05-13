@@ -8,7 +8,7 @@
     box-sizing: border-box;
 }
 
-/* GLOBAL FONT */
+/* GLOBAL FONT - POTTA ONE ONLY */
 body,
 input,
 button,
@@ -42,7 +42,7 @@ body {
     width: 440px;
     max-width: 100%;
     height: 956px;
-    background-image: url('backR0.jpg');
+    background-image: url('back0.jpg');
     background-size: cover;
     background-position: center;
     border: 14px solid #222;
@@ -60,6 +60,7 @@ body {
     top: 0;
     left: 0;
     animation: fadeIn 0.4s ease;
+    overflow-y: auto;
 }
 
 .hidden {
@@ -81,13 +82,63 @@ body {
 /* OVERLAY */
 .content-overlay {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     background: rgba(0,0,0,0.45);
     padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Potta One', cursive;
+}
+
+/* SPLASH CONTAINER - CENTRALIZED */
+.splash-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.splash-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(233, 255, 0, 0.3);
+    border: 3px solid #e9ff00;
+}
+
+/* AUTH CONTAINER - CENTRALIZED */
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.auth-logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    box-shadow: 0 6px 15px rgba(233, 255, 0, 0.2);
+    border: 2px solid #e9ff00;
+}
+
+.auth-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
 }
 
 /* FORM */
@@ -106,6 +157,8 @@ form {
     text-align: center;
     margin-bottom: 20px;
     text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    font-family: 'Potta One', cursive;
+    font-weight: bold;
 }
 
 .subtitle {
@@ -113,38 +166,48 @@ form {
     text-align: center;
     margin-bottom: 30px;
     font-size: 14px;
+    font-family: 'Potta One', cursive;
 }
 
 /* INPUTS */
 input {
     width: 100%;
-    max-width: 350px;
-    padding: 18px;
+    max-width: 320px;
+    padding: 16px;
     margin-bottom: 15px;
-    border-radius: 15px;
+    border-radius: 12px;
     border: none;
     outline: none;
     background: rgba(255,255,255,0.92);
     font-size: 14px;
     color: #111;
+    font-family: 'Potta One', cursive;
+}
+
+input::placeholder {
+    color: rgba(0,0,0,0.4);
 }
 
 /* BUTTONS */
 .btn-main {
     width: 100%;
-    max-width: 350px;
-    padding: 18px;
+    max-width: 320px;
+    padding: 16px;
     background: #e9ff00;
     border: none;
-    border-radius: 35px;
+    border-radius: 25px;
     font-size: 16px;
     cursor: pointer;
     transition: 0.2s ease;
     box-shadow: 0 4px 15px rgba(233,255,0,0.3);
+    font-family: 'Potta One', cursive;
+    font-weight: bold;
+    color: #333;
 }
 
 .btn-main:hover {
     transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(233,255,0,0.4);
 }
 
 .btn-main:active {
@@ -158,9 +221,11 @@ input {
     color: #e9ff00;
     padding: 12px 20px;
     border-radius: 25px;
-    margin-top: auto;
+    margin-top: 20px;
     cursor: pointer;
     transition: 0.2s ease;
+    font-family: 'Potta One', cursive;
+    font-weight: bold;
 }
 
 .btn-back:hover {
@@ -176,10 +241,60 @@ input {
     margin-top: 15px;
     cursor: pointer;
     font-size: 13px;
+    font-family: 'Potta One', cursive;
 }
 
 .footer-text span {
     color: #e9ff00;
+}
+
+/* HOME HEADER */
+.home-header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* STATS BOX HOME */
+.stats-box-home {
+    width: 90%;
+    background: rgba(255,255,255,0.95);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.stat-label {
+    color: #999;
+    font-size: 11px;
+    margin-bottom: 5px;
+    font-family: 'Potta One', cursive;
+}
+
+.stat-value {
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Potta One', cursive;
+}
+
+/* MENU GRID */
+.menu-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 15px;
 }
 
 /* CARDS */
@@ -188,17 +303,20 @@ input {
     width: 100%;
     background: rgba(255,255,255,0.95);
     padding: 20px;
-    border-radius: 20px;
-    margin-bottom: 15px;
+    border-radius: 16px;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
     transition: 0.2s ease;
+    min-height: 100px;
 }
 
 .menu-card:hover,
 .activity-card:hover {
     transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .menu-card:active,
@@ -208,13 +326,17 @@ input {
 
 /* MENU */
 .menu-icon {
-    font-size: 30px;
-    margin-right: 20px;
+    font-size: 32px;
+    margin-bottom: 8px;
+    font-family: 'Potta One', cursive;
 }
 
 .menu-text {
     color: #111;
-    font-size: 18px;
+    font-size: 14px;
+    text-align: center;
+    font-family: 'Potta One', cursive;
+    font-weight: bold;
 }
 
 /* ACTIVITY */
@@ -222,16 +344,156 @@ input {
     color: #111;
     font-size: 16px;
     margin-bottom: 5px;
+    font-family: 'Potta One', cursive;
 }
 
 .act-info p {
     color: #666;
     font-size: 12px;
+    font-family: 'Potta One', cursive;
 }
 
 .act-icon {
     margin-left: auto;
     font-size: 24px;
+}
+
+/* DASHBOARD STYLING */
+.dashboard-scroll {
+    overflow-y: auto;
+    justify-content: flex-start;
+    padding-top: 20px;
+}
+
+.dashboard-section {
+    width: 90%;
+    margin-bottom: 25px;
+}
+
+.section-title {
+    color: #e9ff00;
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-family: 'Potta One', cursive;
+    font-weight: bold;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.dashboard-card {
+    background: rgba(255,255,255,0.95);
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: 0.2s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.dash-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.dash-info {
+    flex: 1;
+}
+
+.dash-label {
+    color: #999;
+    font-size: 10px;
+    margin-bottom: 3px;
+    font-family: 'Potta One', cursive;
+}
+
+.dash-value {
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Potta One', cursive;
+}
+
+/* CATEGORIES LIST */
+.categories-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.category-item {
+    background: rgba(255,255,255,0.95);
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s ease;
+    min-height: 80px;
+}
+
+.category-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.cat-icon {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.cat-name {
+    color: #333;
+    font-size: 12px;
+    text-align: center;
+    font-family: 'Potta One', cursive;
+    font-weight: bold;
+}
+
+/* RECOMMENDATION CARD */
+.recommendation-card {
+    background: rgba(255,255,255,0.95);
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.rec-icon {
+    font-size: 28px;
+    min-width: 30px;
+}
+
+.rec-content {
+    flex: 1;
+}
+
+.rec-title {
+    color: #333;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 3px;
+    font-family: 'Potta One', cursive;
+}
+
+.rec-text {
+    color: #666;
+    font-size: 11px;
+    font-family: 'Potta One', cursive;
 }
 
 /* CATEGORY BUTTON */
@@ -245,6 +507,7 @@ input {
     text-align: left;
     cursor: pointer;
     transition: 0.2s ease;
+    font-family: 'Potta One', cursive;
 }
 
 .cat-btn:hover {
@@ -257,16 +520,24 @@ input {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    margin-bottom: 20px;
 }
 
 .diff-btn {
-    padding: 20px;
+    width: 100%;
+    max-width: 320px;
+    padding: 18px;
     border: none;
     border-radius: 15px;
     color: white;
-    font-size: 18px;
+    font-size: 16px;
     cursor: pointer;
     transition: 0.2s ease;
+    font-family: 'Potta One', cursive;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .diff-btn:hover {
@@ -292,26 +563,41 @@ input {
     text-align: center;
     font-size: 24px;
     border-radius: 12px;
+    font-family: 'Potta One', cursive;
 }
 
-/* =========================
-   QUIZ (FIXED - OUTSIDE MEDIA QUERY)
-========================= */
+/* QUIZ STYLES */
+.timer-box {
+    background: #e9ff00;
+    color: black;
+    padding: 12px 20px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-family: 'Potta One', cursive;
+    font-weight: bold;
+}
 
-
+.stats-box {
+    background: rgba(255,255,255,0.9);
+    color: black;
+    padding: 10px 18px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Potta One', cursive;
+}
 
 #question {
     color: #ffffff;
     font-size: 20px;
     font-weight: 600;
     text-align: center;
-
     margin: 20px 10px;
-
     text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    font-family: 'Potta One', cursive;
 }
 
-/* ANSWERS CONTAINER */
 #answers {
     width: 100%;
     display: flex;
@@ -319,7 +605,6 @@ input {
     gap: 15px;
 }
 
-/* ANSWER BUTTONS (BOX STYLE) */
 .answer-btn {
     display: block;
     width: 100%;
@@ -331,52 +616,12 @@ input {
     text-align: left;
     cursor: pointer;
     transition: 0.2s ease;
+    font-family: 'Potta One', cursive;
 }
 
 .answer-btn:hover {
     background-color: #f2f2f2;
     transform: scale(1.02);
-}
-
-/* TIMER */
-.timer-box {
-    background: #e9ff00;
-    color: black;
-    padding: 12px 20px;
-    border-radius: 20px;
-    margin-bottom: 15px;
-}
-
-/* STATS */
-.stats-box {
-    background: rgba(255,255,255,0.9);
-    color: black;
-    padding: 10px 18px;
-    border-radius: 20px;
-    margin-bottom: 20px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 500px) {
-
-    .iphone-screen {
-        width: 100%;
-        height: 100vh;
-        border-radius: 0;
-        border: none;
-    }
-
-    .content-overlay {
-        padding: 20px;
-    }
-
-    .title {
-        font-size: 24px;
-    }
-
-    .btn-main {
-        max-width: 100%;
-    }
 }
 
 /* PROFILE CARD STYLES */
@@ -387,21 +632,24 @@ input {
     width: 90%;
     text-align: center;
     margin-bottom: 20px;
+    font-family: 'Potta One', cursive;
 }
 
 .profile-card h3 {
     color: #333;
     font-size: 24px;
     margin-bottom: 10px;
+    font-family: 'Potta One', cursive;
 }
 
 .profile-card p {
     color: #666;
     font-size: 14px;
     margin-bottom: 15px;
+    font-family: 'Potta One', cursive;
 }
 
-/* ADDITIONAL UTILITY STYLES */
+/* HIDDEN CONTENT */
 .hidden-content {
     display: none;
 }
@@ -424,6 +672,12 @@ input {
     background: rgba(233, 255, 0, 0.7);
 }
 
+/* RESPONSIVE */
+@media (max-width: 500px) {
+    .iphone-screen {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
         border: none;
     }
 
@@ -434,5 +688,25 @@ input {
     .title,
     .logo-text {
         font-size: 24px;
+    }
+
+    .btn-main {
+        max-width: 100%;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .categories-list {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stats-box-home {
+        grid-template-columns: 1fr;
     }
 }
